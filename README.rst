@@ -73,6 +73,14 @@ Deployment
 
 The following details how to deploy this application.
 
+Create virtual environment. 
+
+pip install -r requirements/local.txt
+
+./manage.py migrate
+
+./manage.py runserver 0.0.0.0:8000
+
 
 
 
