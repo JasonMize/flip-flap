@@ -81,6 +81,9 @@ pip install -r requirements/local.txt
 
 ./manage.py runserver 0.0.0.0:8000
 
-
+Start NPM:
+inside flip
+npm install
+npm start
 
 
