@@ -5,7 +5,7 @@ Base settings to build other settings files upon.
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (flip_flap/config/settings/base.py - 3 = flip_flap/)
-APPS_DIR = ROOT_DIR.path('flip_flap')
+APPS_DIR = ROOT_DIR.path('server')
 
 env = environ.Env()
 
@@ -70,8 +70,9 @@ THIRD_PARTY_APPS = [
     'rest_framework',
 ]
 LOCAL_APPS = [
-    'flip_flap.users.apps.UsersConfig',
+    'server.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'server.flips',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -80,7 +81,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
 MIGRATION_MODULES = {
-    'sites': 'flip_flap.contrib.sites.migrations'
+    'sites': 'server.contrib.sites.migrations'
 }
 
 # AUTHENTICATION

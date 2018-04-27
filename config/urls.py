@@ -17,10 +17,15 @@ urlpatterns = [
     # User management
     url(
         r"^users/",
-        include("flip_flap.users.urls", namespace="users"),
+        include("server.users.urls", namespace="users"),
     ),
     url(r"^accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    url(
+        r"^flips/",
+        include("server.flips.urls", namespace="flips"),
+    ),
+    url(r"^api/", include('rest_framework.urls')),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
