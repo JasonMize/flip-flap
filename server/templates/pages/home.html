@@ -1,1 +1,8 @@
 {% extends "base.html" %}
+
+{% block content %}
+  <div>
+    <a href="{% url 'flips:get_flap_list' %}">Flap List</a>
+  </div>
+
+{% endblock content %}

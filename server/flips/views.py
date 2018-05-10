@@ -12,7 +12,7 @@ def index(request):
   }
 
 # rest api end point
-def get_flap_list(request)
+def get_flap_list(request):
   # returns Json list of all flaps
 
   if request.method == "GET":
