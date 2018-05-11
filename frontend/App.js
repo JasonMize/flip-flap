@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, ActivityIndicator, View, Image } from 'react-native';
-import { List, ListItem, SearchBar, Avatar } from 'react-native-elements';
-import { StackNavigator } from 'react-navigation'
-import { constants } from 'expo';
+// import { StyleSheet, Text, View, FlatList, ActivityIndicator, View, Image } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+// import { List, ListItem, SearchBar, Avatar } from 'react-native-elements';
+import { StackNavigator } from 'react-navigation';
+// import { constants } from 'expo';
 import HomeScreen from './src/components/home';
 import DetailScreen from './src/components/detail';
 
@@ -19,6 +20,7 @@ export default StackNavigator({
     screen: DetailScreen, 
     navigationOptions: {
       title: "Detail",
+      headerBackTitle: "Back",
     },
   },
 }); 
