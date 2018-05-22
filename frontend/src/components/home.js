@@ -17,17 +17,18 @@ export default class HomeScreen extends React.Component {
   }
 
   fetchDataFromApi = () => {
-    const url = "http://localhost:8000/flips/list.json";
+    // const url = "http://localhost:8000/flips/list.json";
+    const url = "http://ron-swanson-quotes.herokuapp.com/v2/quotes";
   
     // this.setState({
     //   loading: true,
     // });
 
     fetch(url)
-      .then(res => res.json())
-      .then(res => {
+      .then(response => response.json())
+      .then(response => {
         this.setState({
-          data: res, 
+          data: response, 
           // error: null, 
           // loading: false, 
           // refreshing: false
@@ -39,14 +40,14 @@ export default class HomeScreen extends React.Component {
       //     loading: false
       //   });
       // })
-      console.log('Data: ', this.state.data);
   };
 
   render() {
+    console.log('Data: ', this.state.data);
     return (
       <View style={styles.container}>
-        <Text>FLIP FLAP</Text>
-        <Text>Hello.</Text>
+        <Text style={styles.header}>Ron Swanson Quote</Text>
+        <Text style={styles.quote}>{this.state.data}</Text>
       </View>
     );
   }
@@ -58,7 +59,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 5,
   },
+  header: {
+    marginTop: 5,
+    backgroundColor: 'blue',
+    color: '#fff',
+    fontSize: 20,
+  },
+  quote: {
+    flex: 9,
+  }
 });
 
   // constructor (props) {

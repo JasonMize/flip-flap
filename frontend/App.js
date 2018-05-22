@@ -15,6 +15,10 @@ export default StackNavigator({
       title: "Home",
       headerBackTitle: "Back",
     },
+    // {
+    //   title: "Detail",
+    //   headerBackTitle: "Back",
+    // }
   },
   Detail: {
     screen: DetailScreen, 

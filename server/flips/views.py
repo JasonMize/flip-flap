@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from .models import *
 from .serializers import *
 from django.views.decorators.csrf import csrf_exempt
-
+import requests
 
 def index(request):
   flap_list = Flap.objects.all()
@@ -11,7 +11,7 @@ def index(request):
     'flap_list': flap_list
   }
 
-# rest api end point
+# django rest framework api
 def get_flap_list(request):
   # returns Json list of all flaps
 
@@ -21,3 +21,9 @@ def get_flap_list(request):
     return JsonResponse(serializer.data, safe=False)
 
 
+# external api
+def get_ron_quote(request):
+  if request.method == "GET":
+    data = requests.get('http://ron-swanson-quotes.herokuapp.com/v2/quotes')
+    json = data.json()
+    return JsonResponse(json, safe=False)
